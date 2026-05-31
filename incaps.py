@@ -1,9 +1,16 @@
+import random
+
 class User:
+    @staticmethod
+    def generate():
+        return random.randint(1000, 9999)
+
     def __init__(self, name, age, email):
         self.name = name 
         self.age = age  
         self.__email = email  # Private attribute
         self._children = []  # Protected attribute
+        self.ID = self.generate()  # Unique ID for each user
 
         
     def get_children(self):
